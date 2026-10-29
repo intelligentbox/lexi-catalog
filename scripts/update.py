@@ -23,7 +23,7 @@ def make_card(model, article, level, today):
 
 def _make_card(model, article, level, today, feedback):
     # The model only sees English evidence, never the Russian terms or IPA.
-    evidence = {'word': article['word'], 'senses': [{k: s[k] for k in ('index', 'pos', 'definition')} | {'translations': [{'index': t['index'], 'gloss': t['gloss']} for t in s['translations']]} for s in article['senses']]}
+    evidence = {'word': article['word'], 'senses': [{k: s[k] for k in ('index', 'pos', 'definition', 'examples', 'collocations')} | {'translations': [{'index': t['index'], 'gloss': t['gloss']} for t in s['translations']]} for s in article['senses']]}
     request = {'level': level, 'article': evidence, 'requiredExampleWord': article['word']}
     if feedback:
         request['previousValidationError'] = feedback
@@ -31,6 +31,9 @@ def _make_card(model, article, level, today, feedback):
     if draft.get('suitable') is not True or type(draft.get('senseIndex')) is not int or not 0 <= draft['senseIndex'] < len(article['senses']):
         raise ValueError('No suitable sense')
     sense = article['senses'][draft['senseIndex']]
+    ei = draft.get('exampleIndex')
+    if type(ei) is not int or not 0 <= ei < len(sense['examples']):
+        raise ValueError('No dictionary example selected')
     ti = draft.get('translationIndex')
     if type(ti) is not int or not 0 <= ti < len(sense['translations']):
         raise ValueError('No matching dictionary translation selected')
@@ -39,9 +42,12 @@ def _make_card(model, article, level, today, feedback):
         raise ValueError('Unsupported topic')
     word = article['word']
     card = {'id': f"pack-{today:%Y%m%d}-{level.lower()}-{re.sub('[^a-z0-9]+', '-', word).strip('-')}", 'word': word, 'level': level, 'pos': sense['pos'], 'pronunciation': sense['pronunciation'],
-            **{k: draft[k] for k in ('definition', 'example', 'collocation', 'levelReason')},
+            **{k: draft[k] for k in ('definition', 'collocation', 'levelReason')},
+            'example': sense['examples'][ei], 'exampleOrigin': 'dictionary',
             'translation': translation['terms'][0], 'translationGloss': translation['gloss'], 'topic': TOPICS[draft['topic']],
             'source': {'name': 'Wiktionary', 'url': article['url'], 'checkedOn': today.isoformat(), 'attribution': 'Wiktionary contributors', 'license': 'CC BY-SA 4.0', 'licenseUrl': LICENSE, 'adapted': True}}
+    if sense['collocations']:
+        card['collocation'] = sense['collocations'][0]
     validate_word(card, new=True)
     if word not in card['collocation'].lower():
         raise ValueError('Collocation missing headword')
@@ -64,7 +70,7 @@ def generate(catalog, base, model, today, repository, fetch=fetch_article):
         for level in LEVELS:
             accepted = 0
             target = 1 if kind == 'daily' else 5
-            for attempt in range(target * 24):
+            for attempt in range(target * 40):
                 if not queues[level]:
                     proposal = model.complete('Propose 12 useful English headwords for the requested CEFR level, varied everyday topics, lowercase spelling. No names, phrases longer than two words, offensive or technical words. Exclude listed words. A dictionary will independently verify each proposal.', {'level': level, 'exclude': sorted(attempted)[-600:]}, CANDIDATE_SCHEMA)
                     words = proposal.get('words', [])
