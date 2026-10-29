@@ -11,9 +11,23 @@ from dictionary import fetch_article
 from model import LocalModel, CARD_SCHEMA, CANDIDATE_SCHEMA, REVIEW_SCHEMA, DRAFT, REVIEW, TOPICS
 
 def make_card(model, article, level, today):
+    feedback = None
+    for attempt in range(2):
+        try:
+            return _make_card(model, article, level, today, feedback)
+        except ValueError as error:
+            # One corrective attempt for malformed writing, never for a rejected meaning.
+            feedback = str(error)
+            if attempt or feedback in ('No suitable sense', 'Linguistic review rejected card'):
+                raise
+
+def _make_card(model, article, level, today, feedback):
     # The model only sees English evidence, never the Russian terms or IPA.
     evidence = {'word': article['word'], 'senses': [{k: s[k] for k in ('index', 'pos', 'definition')} | {'translations': [{'index': t['index'], 'gloss': t['gloss']} for t in s['translations']]} for s in article['senses']]}
-    draft = model.complete(DRAFT, {'level': level, 'article': evidence}, CARD_SCHEMA)
+    request = {'level': level, 'article': evidence, 'requiredExampleWord': article['word']}
+    if feedback:
+        request['previousValidationError'] = feedback
+    draft = model.complete(DRAFT, request, CARD_SCHEMA)
     if draft.get('suitable') is not True or type(draft.get('senseIndex')) is not int or not 0 <= draft['senseIndex'] < len(article['senses']):
         raise ValueError('No suitable sense')
     sense = article['senses'][draft['senseIndex']]
@@ -50,7 +64,7 @@ def generate(catalog, base, model, today, repository, fetch=fetch_article):
         for level in LEVELS:
             accepted = 0
             target = 1 if kind == 'daily' else 5
-            for attempt in range(target * 8):
+            for attempt in range(target * 24):
                 if not queues[level]:
                     proposal = model.complete('Propose 12 useful English headwords for the requested CEFR level, varied everyday topics, lowercase spelling. No names, phrases longer than two words, offensive or technical words. Exclude listed words. A dictionary will independently verify each proposal.', {'level': level, 'exclude': sorted(attempted)[-600:]}, CANDIDATE_SCHEMA)
                     words = proposal.get('words', [])

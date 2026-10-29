@@ -15,13 +15,13 @@ def main():
     candidates = read(ROOT / 'data/candidates.json')
     report = []
     for level in LEVELS:
-        for word in candidates[level][:8]:
+        for word in candidates[level][:30]:
             try:
                 card = make_card(model, fetch_article(word, repository), level, today)
             except ValueError as error:
-                print(f'Skipped {word}: {error}'); continue
+                print(f'Skipped {word}: {error}', flush=True); continue
             report.append(card)
-            print(json.dumps(card, ensure_ascii=False))
+            print(json.dumps(card, ensure_ascii=False), flush=True)
             break
         else:
             raise RuntimeError(f'No accepted integration sample for {level}')
