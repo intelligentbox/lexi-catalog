@@ -14,9 +14,9 @@ from update import generate, make_card
 HTML = '''<h2 id="English">English</h2><h3>Pronunciation</h3><ul>
 <li>(Received Pronunciation) IPA: <span class="IPA">/ˈbɒrəʊ/</span></li>
 <li>(General American) IPA: <span class="IPA">/ˈbɑɹoʊ/</span></li></ul>
-<h3>Noun</h3><ol><li>A temporary thing.<dl><dd>This example must be excluded.</dd></dl></li></ol>
+<h3>Noun</h3><ol><li>A temporary thing.<dl><dd>This example must be excluded.</dd><dd><div class="h-usage-example"><i class="e-example" lang="en">The borrow is due tomorrow.</i></div></dd></dl></li></ol>
 <h4>Translations</h4><table class="translations" data-gloss="a temporary thing"><tr><td><ul><li>Russian: <span lang="ru">вещь</span></li></ul></td></tr></table>
-<h3>Verb</h3><ol><li>To receive something for temporary use.</li><li>(obsolete) An old meaning.</li></ol>
+<h3>Verb</h3><ol><li>To receive something for temporary use.<dl><dd><div class="h-usage-example"><i class="e-example" lang="en">May I borrow this item?</i></div></dd></dl></li><li>(obsolete) An old meaning.</li></ol>
 <h4>Translations</h4><table class="translations" data-gloss="to receive for temporary use"><tr><td><ul><li>Russian: <span lang="ru">одолжи́ть</span></li></ul></td></tr></table>
 <h2 id="Other">Other language</h2><h3>Noun</h3><ol><li>A different language meaning.</li></ol>'''
 
@@ -25,7 +25,7 @@ def card(word, level, today=dt.date(2026, 10, 30)):
 
 def draft_for(word, level):
     sample = card(word, level)
-    return {'suitable': True, 'senseIndex': 1, 'translationIndex': 0, 'topic': 'everyday', **{k: sample[k] for k in ('definition', 'example', 'collocation', 'levelReason')}}
+    return {'suitable': True, 'senseIndex': 1, 'translationIndex': 0, 'exampleIndex': 0, 'topic': 'everyday', **{k: sample[k] for k in ('definition', 'collocation', 'levelReason')}}
 
 class CatalogTests(unittest.TestCase):
     def setUp(self):
@@ -102,12 +102,14 @@ class CatalogTests(unittest.TestCase):
         class FakeModel:
             def complete(self, task, data, schema):
                 if 'suitable' in schema['properties']:
-                    return {**draft_for('borrow', 'A2'), 'translation': 'выдуманный перевод', 'pronunciation': {'uk': '/fake/'}, 'source': 'https://evil.example'}
+                    return {**draft_for('borrow', 'A2'), 'example': 'She can opportunity to travel.', 'translation': 'выдуманный перевод', 'pronunciation': {'uk': '/fake/'}, 'source': 'https://evil.example'}
                 return {k: True for k in schema['properties']}
         result = make_card(FakeModel(), parse_article(HTML, 'borrow'), 'A2', self.date)
         self.assertEqual(result['pronunciation']['uk'], '/ˈbɒrəʊ/')
         self.assertEqual(result['source']['url'], source_url('borrow'))
         self.assertEqual(result['translation'], 'одолжить')
+        self.assertEqual(result['example'], 'May I borrow this item?')
+        self.assertEqual(result['exampleOrigin'], 'dictionary')
 
     def test_russian_definitions_cannot_pass_validation(self):
         sample = card('borrow', 'A2')
@@ -128,7 +130,7 @@ class CatalogTests(unittest.TestCase):
                 return {k: False for k in schema['properties']}
         with self.assertRaises(ValueError): make_card(BadModel(), parse_article(HTML, 'borrow'), 'A2', self.date)
 
-    def test_missing_headword_gets_one_corrective_attempt(self):
+    def test_invalid_example_index_gets_one_corrective_attempt(self):
         class RepairModel:
             calls = 0
             def complete(self, task, data, schema):
@@ -137,9 +139,9 @@ class CatalogTests(unittest.TestCase):
                     return {k: True for k in schema['properties']}
                 draft = draft_for('borrow', 'A2')
                 if self.calls == 1:
-                    draft['example'] = 'May I use this item?'
+                    draft['exampleIndex'] = 99
                 else:
-                    assert data['previousValidationError'] == 'Example must contain exact headword'
+                    assert data['previousValidationError'] == 'No dictionary example selected'
                 return draft
         model = RepairModel()
         result = make_card(model, parse_article(HTML, 'borrow'), 'A2', self.date)
@@ -151,7 +153,7 @@ class CatalogTests(unittest.TestCase):
             calls = 0
             def complete(self, task, data, schema):
                 self.calls += 1
-                return {**draft_for('borrow', 'A2'), 'example': 'May I use this item?'}
+                return {**draft_for('borrow', 'A2'), 'exampleIndex': 99}
         model = InvalidModel()
         with self.assertRaises(ValueError):
             make_card(model, parse_article(HTML, 'borrow'), 'A2', self.date)
@@ -171,7 +173,7 @@ class CatalogTests(unittest.TestCase):
                 return {k: True for k in schema['properties']}
         for day, count in ((self.date, 5), (dt.date(2026, 11, 2), 30)):
             with self.subTest(day=day), patch('builtins.print'):
-                result = generate(self.catalog, self.base, AcceptedModel(), day, 'owner/repo', fetch=lambda word, repo: parse_article(HTML, word))
+                result = generate(self.catalog, self.base, AcceptedModel(), day, 'owner/repo', fetch=lambda word, repo: parse_article(HTML.replace('borrow', word), word))
                 self.assertEqual(len(result['words']), 35 + count)
                 self.assertEqual(due(result, day), [])
                 validate(result, self.catalog)
@@ -186,8 +188,12 @@ class CatalogTests(unittest.TestCase):
                 return {k: True for k in schema['properties']}
         before = copy.deepcopy(self.catalog)
         with patch('builtins.print'), self.assertRaises(TimeoutError):
-            generate(self.catalog, self.base, PartialModel(), self.date, 'owner/repo', fetch=lambda word, repo: parse_article(HTML, word))
+            generate(self.catalog, self.base, PartialModel(), self.date, 'owner/repo', fetch=lambda word, repo: parse_article(HTML.replace('borrow', word), word))
         self.assertEqual(self.catalog, before)
+
+    def test_missing_dictionary_examples_are_not_invented(self):
+        with self.assertRaises(ValueError):
+            parse_article(HTML.replace('h-usage-example', 'quotation'), 'borrow')
 
 if __name__ == '__main__':
     unittest.main()
