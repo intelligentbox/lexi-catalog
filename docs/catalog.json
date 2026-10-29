@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "revision": 2,
-  "publishedAt": "2026-10-29T18:05:17.998Z",
+  "revision": 3,
+  "publishedAt": "2026-10-29T21:24:55.989237Z",
   "description": "Учебные карточки Lexi. Новые словарные карточки адаптированы по Wiktionary (CC BY-SA 4.0); уровни присвоены редакционно.",
   "cadence": {
     "daily": "5 новых слов: по одному на уровень",
@@ -65,6 +65,19 @@
         "pack-20261029-b2-drawback",
         "pack-20261029-c1-tentative",
         "pack-20261029-c2-perspicacious"
+      ]
+    },
+    {
+      "id": "daily-20261030",
+      "kind": "daily",
+      "title": "Слова на каждый день",
+      "publishedOn": "2026-10-30",
+      "wordIds": [
+        "pack-20261030-a2-kitchen",
+        "pack-20261030-b1-permission",
+        "pack-20261030-b2-negotiate",
+        "pack-20261030-c1-inadvertent",
+        "pack-20261030-c2-circumspect"
       ]
     }
   ],
@@ -498,6 +511,146 @@
         "name": "Wiktionary",
         "url": "https://en.wiktionary.org/wiki/perspicacious#English",
         "checkedOn": "2026-10-29",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261030-a2-kitchen",
+      "word": "kitchen",
+      "level": "A2",
+      "pos": "noun",
+      "pronunciation": {
+        "uk": "/ˈkɪt͡ʃ(ɪ)n/",
+        "us": "/ˈkɪt͡ʃ(ə)n/"
+      },
+      "collocation": "kitchen table",
+      "levelReason": "The word 'kitchen' refers to a room where food is prepared, which is a basic concept suitable for A2 learners. The collocation 'kitchen table' is simple and relevant to daily life.",
+      "definition": "A room or area for preparing food.",
+      "definitionOrigin": "dictionary",
+      "example": "We cook in the kitchen.",
+      "exampleOrigin": "dictionary",
+      "translation": "кухня",
+      "translationGloss": "room",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/kitchen#English",
+        "checkedOn": "2026-10-30",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261030-b1-permission",
+      "word": "permission",
+      "level": "B1",
+      "pos": "noun",
+      "pronunciation": {
+        "uk": "/pəˈmɪʃ.ən/",
+        "us": "/pəɹˈmɪʃ.ən/"
+      },
+      "collocation": "permission to leave",
+      "levelReason": "Estimated B1 for this sense; not an official CEFR classification.",
+      "definition": "authorisation; consent ( especially formal consent from someone in authority )",
+      "definitionOrigin": "dictionary",
+      "example": "Sire, do I have your permission to execute this traitor?",
+      "exampleOrigin": "dictionary",
+      "translation": "разрешение",
+      "translationGloss": "authorisation",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/permission#English",
+        "checkedOn": "2026-10-30",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261030-b2-negotiate",
+      "word": "negotiate",
+      "level": "B2",
+      "pos": "verb",
+      "pronunciation": {
+        "uk": "/nɪˈɡəʊ.ʃi.eɪt/",
+        "us": "/nəˈɡoʊ.ʃi.eɪt/"
+      },
+      "collocation": "negotiate a deal",
+      "levelReason": "The verb 'negotiate' at B2 level refers to arranging or settling something by mutual agreement. 'Negotiate a deal' is a common collocation that illustrates the meaning of the word at this level.",
+      "definition": "( transitive ) To arrange or settle something by mutual agreement.",
+      "definitionOrigin": "dictionary",
+      "example": "The client and server computers must first negotiate a network protocol to be used.",
+      "exampleOrigin": "dictionary",
+      "translation": "вести переговоры",
+      "translationGloss": "confer to reach an agreement (intransitive)",
+      "topic": "Работа",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/negotiate#English",
+        "checkedOn": "2026-10-30",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261030-c1-inadvertent",
+      "word": "inadvertent",
+      "level": "C1",
+      "pos": "adjective",
+      "pronunciation": {
+        "uk": "/ˌɪnədˈvɜːtn̩t/",
+        "us": "/ˌɪnədˈvɝtn̩t/"
+      },
+      "collocation": "inadvertent error",
+      "levelReason": "Estimated C1 for this sense; not an official CEFR classification.",
+      "definition": "Not intentional; not on purpose; not conscious.",
+      "definitionOrigin": "dictionary",
+      "example": "We check everything because an inadvertent error could be disastrous.",
+      "exampleOrigin": "dictionary",
+      "translation": "неумышленный",
+      "translationGloss": "not intentional",
+      "topic": "Работа",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/inadvertent#English",
+        "checkedOn": "2026-10-30",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261030-c2-circumspect",
+      "word": "circumspect",
+      "level": "C2",
+      "pos": "adjective",
+      "pronunciation": {
+        "uk": "/ˈsɜː.kəm.spɛkt/",
+        "us": "/ˈsɝ.kəm.spɛkt/"
+      },
+      "collocation": "circumspect in his decisions",
+      "levelReason": "Estimated C2 for this sense; not an official CEFR classification.",
+      "definition": "Carefully aware of all circumstances; considerate of all that is pertinent.",
+      "definitionOrigin": "dictionary",
+      "example": "Being aware of the danger of upsetting her audience, she was somewhat circumspect in her comments.",
+      "exampleOrigin": "dictionary",
+      "translation": "осмотрительный",
+      "translationGloss": "carefully aware of all circumstances",
+      "topic": "Культура",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/circumspect#English",
+        "checkedOn": "2026-10-30",
         "attribution": "Wiktionary contributors",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
