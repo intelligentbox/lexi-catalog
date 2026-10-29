@@ -76,8 +76,8 @@ def parse_article(html, word):
                 fragment = BeautifulSoup(str(item), 'html.parser')
                 for child in fragment.select('dl, ul, ol, .HQToggle, .citation-whole, .mw-editsection'):
                     child.decompose()
-                definition = fragment.get_text(' ', strip=True)
-                if 10 <= len(definition) <= 500 and not re.search(r'\b(obsolete|archaic|offensive|vulgar|slur)\b', definition, re.I):
+                definition = re.sub(r'\s+([.,!?;:])', r'\1', fragment.get_text(' ', strip=True)).replace('“', '"').replace('”', '"')
+                if 10 <= len(definition) <= 220 and not re.search(r'\b(obsolete|archaic|offensive|vulgar|slur)\b', definition, re.I):
                     senses.append({'pos': pos, 'definition': definition, 'group': group, 'examples': examples[:8], 'collocations': collocations[:8]})
     supported = []
     for sense in senses:
