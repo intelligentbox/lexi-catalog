@@ -25,7 +25,7 @@ def card(word, level, today=dt.date(2026, 10, 30)):
 
 def draft_for(word, level):
     sample = card(word, level)
-    return {'suitable': True, 'senseIndex': 1, 'translationIndex': 0, 'exampleIndex': 0, 'topic': 'everyday', **{k: sample[k] for k in ('definition', 'collocation', 'levelReason')}}
+    return {'suitable': True, 'senseIndex': 1, 'translationIndex': 0, 'exampleIndex': 0, 'topic': 'everyday', **{k: sample[k] for k in ('collocation', 'levelReason')}}
 
 class CatalogTests(unittest.TestCase):
     def setUp(self):
@@ -102,7 +102,7 @@ class CatalogTests(unittest.TestCase):
         class FakeModel:
             def complete(self, task, data, schema):
                 if 'suitable' in schema['properties']:
-                    return {**draft_for('borrow', 'A2'), 'example': 'She can opportunity to travel.', 'translation': 'выдуманный перевод', 'pronunciation': {'uk': '/fake/'}, 'source': 'https://evil.example'}
+                    return {**draft_for('borrow', 'A2'), 'definition': 'Never return anything.', 'example': 'She can opportunity to travel.', 'translation': 'выдуманный перевод', 'pronunciation': {'uk': '/fake/'}, 'source': 'https://evil.example'}
                 return {k: True for k in schema['properties']}
         result = make_card(FakeModel(), parse_article(HTML, 'borrow'), 'A2', self.date)
         self.assertEqual(result['pronunciation']['uk'], '/ˈbɒrəʊ/')
@@ -110,6 +110,8 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(result['translation'], 'одолжить')
         self.assertEqual(result['example'], 'May I borrow this item?')
         self.assertEqual(result['exampleOrigin'], 'dictionary')
+        self.assertEqual(result['definition'], 'To receive something for temporary use.')
+        self.assertEqual(result['definitionOrigin'], 'dictionary')
 
     def test_russian_definitions_cannot_pass_validation(self):
         sample = card('borrow', 'A2')
