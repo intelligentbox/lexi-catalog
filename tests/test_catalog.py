@@ -128,6 +128,35 @@ class CatalogTests(unittest.TestCase):
                 return {k: False for k in schema['properties']}
         with self.assertRaises(ValueError): make_card(BadModel(), parse_article(HTML, 'borrow'), 'A2', self.date)
 
+    def test_missing_headword_gets_one_corrective_attempt(self):
+        class RepairModel:
+            calls = 0
+            def complete(self, task, data, schema):
+                self.calls += 1
+                if 'suitable' not in schema['properties']:
+                    return {k: True for k in schema['properties']}
+                draft = draft_for('borrow', 'A2')
+                if self.calls == 1:
+                    draft['example'] = 'May I use this item?'
+                else:
+                    assert data['previousValidationError'] == 'Example must contain exact headword'
+                return draft
+        model = RepairModel()
+        result = make_card(model, parse_article(HTML, 'borrow'), 'A2', self.date)
+        self.assertIn('borrow', result['example'])
+        self.assertEqual(model.calls, 3)
+
+    def test_invalid_second_attempt_still_rejected(self):
+        class InvalidModel:
+            calls = 0
+            def complete(self, task, data, schema):
+                self.calls += 1
+                return {**draft_for('borrow', 'A2'), 'example': 'May I use this item?'}
+        model = InvalidModel()
+        with self.assertRaises(ValueError):
+            make_card(model, parse_article(HTML, 'borrow'), 'A2', self.date)
+        self.assertEqual(model.calls, 2)
+
     def test_network_failure_leaves_catalog_unchanged(self):
         before = json.dumps(self.catalog, sort_keys=True)
         def unavailable(*args): raise TimeoutError('offline')
