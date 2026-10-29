@@ -161,6 +161,17 @@ class CatalogTests(unittest.TestCase):
             make_card(model, parse_article(HTML, 'borrow'), 'A2', self.date)
         self.assertEqual(model.calls, 2)
 
+    def test_long_optional_explanation_does_not_discard_dictionary_card(self):
+        class VerboseModel:
+            def complete(self, task, data, schema):
+                if 'suitable' in schema['properties']:
+                    return {**draft_for('borrow', 'A2'), 'levelReason': 'A long explanation. ' * 30}
+                return {k: True for k in schema['properties']}
+        result = make_card(VerboseModel(), parse_article(HTML, 'borrow'), 'A2', self.date)
+        self.assertLessEqual(len(result['levelReason']), 200)
+        self.assertIn('not an official CEFR', result['levelReason'])
+        self.assertEqual(result['definition'], 'To receive something for temporary use.')
+
     def test_network_failure_leaves_catalog_unchanged(self):
         before = json.dumps(self.catalog, sort_keys=True)
         def unavailable(*args): raise TimeoutError('offline')
