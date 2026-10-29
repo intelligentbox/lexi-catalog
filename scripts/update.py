@@ -49,6 +49,9 @@ def _make_card(model, article, level, today, feedback):
             'source': {'name': 'Wiktionary', 'url': article['url'], 'checkedOn': today.isoformat(), 'attribution': 'Wiktionary contributors', 'license': 'CC BY-SA 4.0', 'licenseUrl': LICENSE, 'adapted': True}}
     if sense['collocations']:
         card['collocation'] = sense['collocations'][0]
+    # An optional long model explanation must not discard valid dictionary content.
+    if isinstance(card['levelReason'], str) and len(card['levelReason']) > 200:
+        card['levelReason'] = f'Estimated {level} for this sense; not an official CEFR classification.'
     validate_word(card, new=True)
     if word not in card['collocation'].lower():
         raise ValueError('Collocation missing headword')
