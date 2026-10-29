@@ -8,16 +8,25 @@ from urllib.error import HTTPError, URLError
 from zoneinfo import ZoneInfo
 from catalog import ROOT, LEVELS, LICENSE, WORD, append_pack, due, read, validate, validate_word, write
 from dictionary import fetch_article
-from model import LocalModel, CARD_SCHEMA, CANDIDATE_SCHEMA, REVIEW_SCHEMA, DRAFT, REVIEW
+from model import LocalModel, CARD_SCHEMA, CANDIDATE_SCHEMA, REVIEW_SCHEMA, DRAFT, REVIEW, TOPICS
 
 def make_card(model, article, level, today):
-    draft = model.complete(DRAFT, {'level': level, 'article': article}, CARD_SCHEMA)
+    # The model only sees English evidence, never the Russian terms or IPA.
+    evidence = {'word': article['word'], 'senses': [{k: s[k] for k in ('index', 'pos', 'definition')} | {'translations': [{'index': t['index'], 'gloss': t['gloss']} for t in s['translations']]} for s in article['senses']]}
+    draft = model.complete(DRAFT, {'level': level, 'article': evidence}, CARD_SCHEMA)
     if draft.get('suitable') is not True or type(draft.get('senseIndex')) is not int or not 0 <= draft['senseIndex'] < len(article['senses']):
         raise ValueError('No suitable sense')
     sense = article['senses'][draft['senseIndex']]
+    ti = draft.get('translationIndex')
+    if type(ti) is not int or not 0 <= ti < len(sense['translations']):
+        raise ValueError('No matching dictionary translation selected')
+    translation = sense['translations'][ti]
+    if draft.get('topic') not in TOPICS:
+        raise ValueError('Unsupported topic')
     word = article['word']
     card = {'id': f"pack-{today:%Y%m%d}-{level.lower()}-{re.sub('[^a-z0-9]+', '-', word).strip('-')}", 'word': word, 'level': level, 'pos': sense['pos'], 'pronunciation': sense['pronunciation'],
-            **{k: draft[k] for k in ('translation', 'definition', 'example', 'collocation', 'topic', 'levelReason')},
+            **{k: draft[k] for k in ('definition', 'example', 'collocation', 'levelReason')},
+            'translation': translation['terms'][0], 'translationGloss': translation['gloss'], 'topic': TOPICS[draft['topic']],
             'source': {'name': 'Wiktionary', 'url': article['url'], 'checkedOn': today.isoformat(), 'attribution': 'Wiktionary contributors', 'license': 'CC BY-SA 4.0', 'licenseUrl': LICENSE, 'adapted': True}}
     validate_word(card, new=True)
     if word not in card['collocation'].lower():
@@ -25,7 +34,7 @@ def make_card(model, article, level, today):
     # Avoid simply republishing a full source definition as generated writing.
     if card['definition'].strip().lower() == sense['definition'].strip().lower():
         raise ValueError('Definition not adapted')
-    review = model.complete(REVIEW, {'card': card, 'sourceSense': sense}, REVIEW_SCHEMA)
+    review = model.complete(REVIEW, {'card': {k: card[k] for k in ('word', 'level', 'pos', 'definition', 'example', 'collocation', 'translationGloss', 'levelReason')}, 'sourceDefinition': sense['definition']}, REVIEW_SCHEMA)
     if set(review) != set(REVIEW_SCHEMA['properties']) or not all(v is True for v in review.values()):
         raise ValueError('Linguistic review rejected card')
     return card

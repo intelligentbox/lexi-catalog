@@ -17,15 +17,30 @@ def parse_article(html, word):
     heading = marker if marker.name == 'h2' else marker.find_parent('h2')
     if heading is None:
         raise ValueError('Unexpected dictionary markup')
-    group, pos, senses, pronunciations = 0, None, [], {}
-    for node in heading.find_all_next(['h2', 'h3', 'h4', 'h5', 'ol', 'span']):
+    group, pos, lexical_pos, senses, pronunciations, translations = 0, None, None, [], {}, []
+    for node in heading.find_all_next(['h2', 'h3', 'h4', 'h5', 'ol', 'span', 'table']):
         if node.name == 'h2':
             break
         if node.name in ('h3', 'h4', 'h5'):
             title = node.get_text(' ', strip=True).split('[')[0].strip()
             if title.startswith('Etymology'):
                 group += 1
+                lexical_pos = None
             pos = POS.get(title)
+            if pos:
+                lexical_pos = pos
+        elif node.name == 'table' and 'translations' in node.get('class', []) and lexical_pos:
+            gloss = node.get('data-gloss', '').strip()
+            terms = []
+            for span in node.select('span[lang="ru"]'):
+                term = span.get_text(' ', strip=True).replace('\u0301', '')
+                parent = span.find_parent('li')
+                if parent and re.search(r'\b(archaic|obsolete|vulgar|offensive)\b', parent.get_text(' ', strip=True), re.I):
+                    continue
+                if re.fullmatch(r'[А-Яа-яЁё -]{1,60}', term) and term not in terms:
+                    terms.append(term)
+            if gloss and terms:
+                translations.append({'group': group, 'pos': lexical_pos, 'gloss': gloss[:300], 'terms': terms[:5]})
         elif node.name == 'span' and 'IPA' in node.get('class', []):
             ipa = node.get_text('', strip=True)
             li = node.find_parent('li')
@@ -50,10 +65,11 @@ def parse_article(html, word):
     supported = []
     for sense in senses:
         p = pronunciations.get(sense['group'], pronunciations.get(0, {}))
-        if set(p) == {'uk', 'us'}:
-            supported.append({'index': len(supported), 'pos': sense['pos'], 'definition': sense['definition'], 'pronunciation': dict(p)})
+        choices = [dict(index=i, gloss=t['gloss'], terms=t['terms']) for i, t in enumerate(t for t in translations if t['group'] == sense['group'] and t['pos'] == sense['pos'])][:12]
+        if set(p) == {'uk', 'us'} and choices:
+            supported.append({'index': len(supported), 'pos': sense['pos'], 'definition': sense['definition'], 'pronunciation': dict(p), 'translations': choices})
     if not supported:
-        raise ValueError('No sense with explicitly labelled UK and US transcriptions')
+        raise ValueError('No sense with labelled UK/US IPA and a Russian dictionary translation')
     return {'word': word, 'url': source_url(word), 'senses': supported[:12]}
 
 def fetch_article(word, repository, cache=None):

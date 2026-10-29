@@ -54,6 +54,11 @@ def validate_word(w, new=False):
         text(w['levelReason'], 200)
         if w['pos'] not in ('noun', 'verb', 'adjective', 'adverb') or not re.search('[А-Яа-яЁё]', w['translation']):
             raise ValueError('Russian translation and supported part of speech required')
+        for field in ('definition', 'example', 'collocation', 'levelReason'):
+            if not re.fullmatch(r'''[A-Za-z0-9 \t.,;:!?()'"\-/–—’]+''', w[field]):
+                raise ValueError(f'{field} must be English')
+        if len(w['definition']) > 220 or len(w['example']) > 220 or len(w['collocation']) > 100 or len(w['translation']) > 100:
+            raise ValueError('Learning text is too long')
 
 def validate(catalog, previous=None):
     if catalog['schema'] != 1 or type(catalog['revision']) is not int or catalog['revision'] < 1:
