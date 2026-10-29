@@ -15,11 +15,17 @@ HTML = '''<h2 id="English">English</h2><h3>Pronunciation</h3><ul>
 <li>(Received Pronunciation) IPA: <span class="IPA">/ˈbɒrəʊ/</span></li>
 <li>(General American) IPA: <span class="IPA">/ˈbɑɹoʊ/</span></li></ul>
 <h3>Noun</h3><ol><li>A temporary thing.<dl><dd>This example must be excluded.</dd></dl></li></ol>
+<h4>Translations</h4><table class="translations" data-gloss="a temporary thing"><tr><td><ul><li>Russian: <span lang="ru">вещь</span></li></ul></td></tr></table>
 <h3>Verb</h3><ol><li>To receive something for temporary use.</li><li>(obsolete) An old meaning.</li></ol>
+<h4>Translations</h4><table class="translations" data-gloss="to receive for temporary use"><tr><td><ul><li>Russian: <span lang="ru">одолжи́ть</span></li></ul></td></tr></table>
 <h2 id="Other">Other language</h2><h3>Noun</h3><ol><li>A different language meaning.</li></ol>'''
 
 def card(word, level, today=dt.date(2026, 10, 30)):
-    return {'id': f'pack-{today:%Y%m%d}-{level.lower()}-{word}', 'word': word, 'level': level, 'pos': 'verb', 'translation': 'взять на время', 'definition': 'To use an item and return it later.', 'example': f'May I {word} this item?', 'collocation': f'{word} a book', 'topic': 'Предметы', 'levelReason': 'Приблизительная учебная оценка.', 'pronunciation': {'uk': '/ˈbɒrəʊ/', 'us': '/ˈbɑɹoʊ/'}, 'source': {'name': 'Wiktionary', 'url': source_url(word), 'checkedOn': today.isoformat(), 'license': 'CC BY-SA 4.0', 'licenseUrl': LICENSE}}
+    return {'id': f'pack-{today:%Y%m%d}-{level.lower()}-{word}', 'word': word, 'level': level, 'pos': 'verb', 'translation': 'взять на время', 'definition': 'To use an item and return it later.', 'example': f'May I {word} this item?', 'collocation': f'{word} a book', 'topic': 'Предметы', 'levelReason': 'An approximate educational level.', 'pronunciation': {'uk': '/ˈbɒrəʊ/', 'us': '/ˈbɑɹoʊ/'}, 'source': {'name': 'Wiktionary', 'url': source_url(word), 'checkedOn': today.isoformat(), 'license': 'CC BY-SA 4.0', 'licenseUrl': LICENSE}}
+
+def draft_for(word, level):
+    sample = card(word, level)
+    return {'suitable': True, 'senseIndex': 1, 'translationIndex': 0, 'topic': 'everyday', **{k: sample[k] for k in ('definition', 'example', 'collocation', 'levelReason')}}
 
 class CatalogTests(unittest.TestCase):
     def setUp(self):
@@ -96,11 +102,23 @@ class CatalogTests(unittest.TestCase):
         class FakeModel:
             def complete(self, task, data, schema):
                 if 'suitable' in schema['properties']:
-                    return {'suitable': True, 'senseIndex': 1, **{k: card('borrow', 'A2')[k] for k in ('translation', 'definition', 'example', 'collocation', 'topic', 'levelReason')}, 'pronunciation': {'uk': '/fake/'}, 'source': 'https://evil.example'}
+                    return {**draft_for('borrow', 'A2'), 'translation': 'выдуманный перевод', 'pronunciation': {'uk': '/fake/'}, 'source': 'https://evil.example'}
                 return {k: True for k in schema['properties']}
         result = make_card(FakeModel(), parse_article(HTML, 'borrow'), 'A2', self.date)
         self.assertEqual(result['pronunciation']['uk'], '/ˈbɒrəʊ/')
         self.assertEqual(result['source']['url'], source_url('borrow'))
+        self.assertEqual(result['translation'], 'одолжить')
+
+    def test_russian_definitions_cannot_pass_validation(self):
+        sample = card('borrow', 'A2')
+        for field in ('definition', 'example', 'collocation', 'levelReason'):
+            changed = copy.deepcopy(sample); changed[field] = 'Ошибка языка ' + changed[field]
+            with self.assertRaises(ValueError): validate_word(changed, new=True)
+
+    def test_russian_translation_must_exist_in_english_section(self):
+        with self.assertRaises(ValueError): parse_article(HTML.replace('lang="ru"', 'lang="uk"'), 'borrow')
+        parsed = parse_article(HTML, 'borrow')
+        self.assertEqual(parsed['senses'][1]['translations'][0]['terms'], ['одолжить'])
 
     def test_failed_review_cannot_publish(self):
         class BadModel:
@@ -120,8 +138,7 @@ class CatalogTests(unittest.TestCase):
         class AcceptedModel:
             def complete(self, task, data, schema):
                 if 'suitable' in schema['properties']:
-                    sample = card(data['article']['word'], data['level'])
-                    return {'suitable': True, 'senseIndex': 1, **{k: sample[k] for k in ('translation', 'definition', 'example', 'collocation', 'topic', 'levelReason')}}
+                    return draft_for(data['article']['word'], data['level'])
                 return {k: True for k in schema['properties']}
         for day, count in ((self.date, 5), (dt.date(2026, 11, 2), 30)):
             with self.subTest(day=day), patch('builtins.print'):
@@ -136,8 +153,7 @@ class CatalogTests(unittest.TestCase):
                 if 'suitable' in schema['properties']:
                     if data['level'] != 'A2':
                         raise TimeoutError('model unavailable')
-                    sample = card(data['article']['word'], 'A2')
-                    return {'suitable': True, 'senseIndex': 1, **{k: sample[k] for k in ('translation', 'definition', 'example', 'collocation', 'topic', 'levelReason')}}
+                    return draft_for(data['article']['word'], 'A2')
                 return {k: True for k in schema['properties']}
         before = copy.deepcopy(self.catalog)
         with patch('builtins.print'), self.assertRaises(TimeoutError):
