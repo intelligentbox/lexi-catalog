@@ -1,0 +1,502 @@
+[
+  {
+    "id": "A2-0",
+    "level": "A2",
+    "word": "journey"
+  },
+  {
+    "id": "A2-1",
+    "level": "A2",
+    "word": "borrow"
+  },
+  {
+    "id": "A2-2",
+    "level": "A2",
+    "word": "crowded"
+  },
+  {
+    "id": "A2-3",
+    "level": "A2",
+    "word": "improve"
+  },
+  {
+    "id": "A2-4",
+    "level": "A2",
+    "word": "decide"
+  },
+  {
+    "id": "A2-5",
+    "level": "A2",
+    "word": "invite"
+  },
+  {
+    "id": "A2-6",
+    "level": "A2",
+    "word": "prepare"
+  },
+  {
+    "id": "A2-7",
+    "level": "A2",
+    "word": "quiet"
+  },
+  {
+    "id": "A2-8",
+    "level": "A2",
+    "word": "enough"
+  },
+  {
+    "id": "A2-9",
+    "level": "A2",
+    "word": "careful"
+  },
+  {
+    "id": "A2-10",
+    "level": "A2",
+    "word": "arrive"
+  },
+  {
+    "id": "A2-11",
+    "level": "A2",
+    "word": "forget"
+  },
+  {
+    "id": "A2-12",
+    "level": "A2",
+    "word": "healthy"
+  },
+  {
+    "id": "A2-13",
+    "level": "A2",
+    "word": "neighbour"
+  },
+  {
+    "id": "A2-14",
+    "level": "A2",
+    "word": "weather"
+  },
+  {
+    "id": "A2-15",
+    "level": "A2",
+    "word": "polite"
+  },
+  {
+    "id": "A2-16",
+    "level": "A2",
+    "word": "choose"
+  },
+  {
+    "id": "A2-17",
+    "level": "A2",
+    "word": "explain"
+  },
+  {
+    "id": "A2-18",
+    "level": "A2",
+    "word": "repair"
+  },
+  {
+    "id": "A2-19",
+    "level": "A2",
+    "word": "ticket"
+  },
+  {
+    "id": "B1-0",
+    "level": "B1",
+    "word": "achieve"
+  },
+  {
+    "id": "B1-1",
+    "level": "B1",
+    "word": "reliable"
+  },
+  {
+    "id": "B1-2",
+    "level": "B1",
+    "word": "opportunity"
+  },
+  {
+    "id": "B1-3",
+    "level": "B1",
+    "word": "avoid"
+  },
+  {
+    "id": "B1-4",
+    "level": "B1",
+    "word": "despite"
+  },
+  {
+    "id": "B1-5",
+    "level": "B1",
+    "word": "encourage"
+  },
+  {
+    "id": "B1-6",
+    "level": "B1",
+    "word": "afford"
+  },
+  {
+    "id": "B1-7",
+    "level": "B1",
+    "word": "suggest"
+  },
+  {
+    "id": "B1-8",
+    "level": "B1",
+    "word": "purpose"
+  },
+  {
+    "id": "B1-9",
+    "level": "B1",
+    "word": "experience"
+  },
+  {
+    "id": "B1-10",
+    "level": "B1",
+    "word": "confident"
+  },
+  {
+    "id": "B1-11",
+    "level": "B1",
+    "word": "behaviour"
+  },
+  {
+    "id": "B1-12",
+    "level": "B1",
+    "word": "consider"
+  },
+  {
+    "id": "B1-13",
+    "level": "B1",
+    "word": "disappoint"
+  },
+  {
+    "id": "B1-14",
+    "level": "B1",
+    "word": "environment"
+  },
+  {
+    "id": "B1-15",
+    "level": "B1",
+    "word": "although"
+  },
+  {
+    "id": "B1-16",
+    "level": "B1",
+    "word": "request"
+  },
+  {
+    "id": "B1-17",
+    "level": "B1",
+    "word": "discover"
+  },
+  {
+    "id": "B1-18",
+    "level": "B1",
+    "word": "instead"
+  },
+  {
+    "id": "B1-19",
+    "level": "B1",
+    "word": "responsible"
+  },
+  {
+    "id": "B2-0",
+    "level": "B2",
+    "word": "perspective"
+  },
+  {
+    "id": "B2-1",
+    "level": "B2",
+    "word": "nevertheless"
+  },
+  {
+    "id": "B2-2",
+    "level": "B2",
+    "word": "reluctant"
+  },
+  {
+    "id": "B2-3",
+    "level": "B2",
+    "word": "assumption"
+  },
+  {
+    "id": "B2-4",
+    "level": "B2",
+    "word": "beneficial"
+  },
+  {
+    "id": "B2-5",
+    "level": "B2",
+    "word": "acknowledge"
+  },
+  {
+    "id": "B2-6",
+    "level": "B2",
+    "word": "approach"
+  },
+  {
+    "id": "B2-7",
+    "level": "B2",
+    "word": "evidence"
+  },
+  {
+    "id": "B2-8",
+    "level": "B2",
+    "word": "maintain"
+  },
+  {
+    "id": "B2-9",
+    "level": "B2",
+    "word": "significant"
+  },
+  {
+    "id": "B2-10",
+    "level": "B2",
+    "word": "consequence"
+  },
+  {
+    "id": "B2-11",
+    "level": "B2",
+    "word": "contribute"
+  },
+  {
+    "id": "B2-12",
+    "level": "B2",
+    "word": "efficient"
+  },
+  {
+    "id": "B2-13",
+    "level": "B2",
+    "word": "overcome"
+  },
+  {
+    "id": "B2-14",
+    "level": "B2",
+    "word": "regardless"
+  },
+  {
+    "id": "B2-15",
+    "level": "B2",
+    "word": "sustainable"
+  },
+  {
+    "id": "B2-16",
+    "level": "B2",
+    "word": "convincing"
+  },
+  {
+    "id": "B2-17",
+    "level": "B2",
+    "word": "hesitate"
+  },
+  {
+    "id": "B2-18",
+    "level": "B2",
+    "word": "otherwise"
+  },
+  {
+    "id": "B2-19",
+    "level": "B2",
+    "word": "outcome"
+  },
+  {
+    "id": "C1-0",
+    "level": "C1",
+    "word": "nuance"
+  },
+  {
+    "id": "C1-1",
+    "level": "C1",
+    "word": "compelling"
+  },
+  {
+    "id": "C1-2",
+    "level": "C1",
+    "word": "alleviate"
+  },
+  {
+    "id": "C1-3",
+    "level": "C1",
+    "word": "ambiguous"
+  },
+  {
+    "id": "C1-4",
+    "level": "C1",
+    "word": "coherent"
+  },
+  {
+    "id": "C1-5",
+    "level": "C1",
+    "word": "scrutinise"
+  },
+  {
+    "id": "C1-6",
+    "level": "C1",
+    "word": "underlying"
+  },
+  {
+    "id": "C1-7",
+    "level": "C1",
+    "word": "plausible"
+  },
+  {
+    "id": "C1-8",
+    "level": "C1",
+    "word": "convey"
+  },
+  {
+    "id": "C1-9",
+    "level": "C1",
+    "word": "resilient"
+  },
+  {
+    "id": "C1-10",
+    "level": "C1",
+    "word": "discrepancy"
+  },
+  {
+    "id": "C1-11",
+    "level": "C1",
+    "word": "substantial"
+  },
+  {
+    "id": "C1-12",
+    "level": "C1",
+    "word": "undermine"
+  },
+  {
+    "id": "C1-13",
+    "level": "C1",
+    "word": "inherent"
+  },
+  {
+    "id": "C1-14",
+    "level": "C1",
+    "word": "feasible"
+  },
+  {
+    "id": "C1-15",
+    "level": "C1",
+    "word": "allocate"
+  },
+  {
+    "id": "C1-16",
+    "level": "C1",
+    "word": "consensus"
+  },
+  {
+    "id": "C1-17",
+    "level": "C1",
+    "word": "incentive"
+  },
+  {
+    "id": "C1-18",
+    "level": "C1",
+    "word": "albeit"
+  },
+  {
+    "id": "C1-19",
+    "level": "C1",
+    "word": "mitigate"
+  },
+  {
+    "id": "C2-0",
+    "level": "C2",
+    "word": "serendipity"
+  },
+  {
+    "id": "C2-1",
+    "level": "C2",
+    "word": "ubiquitous"
+  },
+  {
+    "id": "C2-2",
+    "level": "C2",
+    "word": "equivocal"
+  },
+  {
+    "id": "C2-3",
+    "level": "C2",
+    "word": "meticulous"
+  },
+  {
+    "id": "C2-4",
+    "level": "C2",
+    "word": "ephemeral"
+  },
+  {
+    "id": "C2-5",
+    "level": "C2",
+    "word": "juxtapose"
+  },
+  {
+    "id": "C2-6",
+    "level": "C2",
+    "word": "inadvertently"
+  },
+  {
+    "id": "C2-7",
+    "level": "C2",
+    "word": "conundrum"
+  },
+  {
+    "id": "C2-8",
+    "level": "C2",
+    "word": "tenacious"
+  },
+  {
+    "id": "C2-9",
+    "level": "C2",
+    "word": "ostensibly"
+  },
+  {
+    "id": "C2-10",
+    "level": "C2",
+    "word": "perfunctory"
+  },
+  {
+    "id": "C2-11",
+    "level": "C2",
+    "word": "intransigent"
+  },
+  {
+    "id": "C2-12",
+    "level": "C2",
+    "word": "corroborate"
+  },
+  {
+    "id": "C2-13",
+    "level": "C2",
+    "word": "salient"
+  },
+  {
+    "id": "C2-14",
+    "level": "C2",
+    "word": "eschew"
+  },
+  {
+    "id": "C2-15",
+    "level": "C2",
+    "word": "idiosyncrasy"
+  },
+  {
+    "id": "C2-16",
+    "level": "C2",
+    "word": "obfuscate"
+  },
+  {
+    "id": "C2-17",
+    "level": "C2",
+    "word": "prescient"
+  },
+  {
+    "id": "C2-18",
+    "level": "C2",
+    "word": "inexorable"
+  },
+  {
+    "id": "C2-19",
+    "level": "C2",
+    "word": "quintessential"
+  }
+]

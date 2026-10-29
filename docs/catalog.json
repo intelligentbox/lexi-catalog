@@ -1,0 +1,508 @@
+{
+  "schema": 1,
+  "revision": 2,
+  "publishedAt": "2026-10-29T18:05:17.998Z",
+  "description": "Учебные карточки Lexi. Новые словарные карточки адаптированы по Wiktionary (CC BY-SA 4.0); уровни присвоены редакционно.",
+  "cadence": {
+    "daily": "5 новых слов: по одному на уровень",
+    "weekly": "25 тематических слов: по пять на уровень"
+  },
+  "packs": [
+    {
+      "id": "daily-20261029",
+      "kind": "daily",
+      "title": "Маленькие шаги каждый день",
+      "wordIds": [
+        "pack-20261029-a2-routine",
+        "pack-20261029-b1-progress",
+        "pack-20261029-b2-consistent",
+        "pack-20261029-c1-perseverance",
+        "pack-20261029-c2-assiduous"
+      ],
+      "publishedOn": "2026-10-29"
+    },
+    {
+      "id": "weekly-20261029",
+      "kind": "weekly",
+      "title": "Учёба, привычки и личный рост",
+      "wordIds": [
+        "pack-20261029-a2-practise",
+        "pack-20261029-a2-check",
+        "pack-20261029-a2-mistake",
+        "pack-20261029-a2-notebook",
+        "pack-20261029-a2-break",
+        "pack-20261029-b1-concentrate",
+        "pack-20261029-b1-revise",
+        "pack-20261029-b1-manage",
+        "pack-20261029-b1-improvement",
+        "pack-20261029-b1-effort",
+        "pack-20261029-b2-prioritise",
+        "pack-20261029-b2-feedback",
+        "pack-20261029-b2-distract",
+        "pack-20261029-b2-persist",
+        "pack-20261029-b2-adapt",
+        "pack-20261029-c1-consolidate",
+        "pack-20261029-c1-retain",
+        "pack-20261029-c1-proficiency",
+        "pack-20261029-c1-incremental",
+        "pack-20261029-c1-refine",
+        "pack-20261029-c2-ingrained",
+        "pack-20261029-c2-diligence",
+        "pack-20261029-c2-internalise",
+        "pack-20261029-c2-discernment",
+        "pack-20261029-c2-erudite"
+      ],
+      "publishedOn": "2026-10-29"
+    },
+    {
+      "id": "daily-20261029-online",
+      "kind": "daily",
+      "title": "Из словаря в живую речь",
+      "publishedOn": "2026-10-29",
+      "wordIds": [
+        "pack-20261029-a2-lend",
+        "pack-20261029-b1-postpone",
+        "pack-20261029-b2-drawback",
+        "pack-20261029-c1-tentative",
+        "pack-20261029-c2-perspicacious"
+      ]
+    }
+  ],
+  "words": [
+    {
+      "id": "pack-20261029-a2-routine",
+      "level": "A2",
+      "word": "routine",
+      "translation": "привычный порядок действий",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "The things you usually do in the same order.",
+      "example": "Reading before bed is part of my daily routine.",
+      "collocation": "a daily routine"
+    },
+    {
+      "id": "pack-20261029-b1-progress",
+      "level": "B1",
+      "word": "progress",
+      "translation": "прогресс, продвижение",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "Movement towards a better or more developed result.",
+      "example": "You can see your progress by reading your old notes.",
+      "collocation": "make progress"
+    },
+    {
+      "id": "pack-20261029-b2-consistent",
+      "level": "B2",
+      "word": "consistent",
+      "translation": "последовательный, стабильный",
+      "pos": "adjective",
+      "topic": "Учёба и привычки",
+      "definition": "Continuing in a similar, dependable way over time.",
+      "example": "A consistent routine makes regular practice easier.",
+      "collocation": "consistent effort"
+    },
+    {
+      "id": "pack-20261029-c1-perseverance",
+      "level": "C1",
+      "word": "perseverance",
+      "translation": "настойчивость",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "Continuing to work towards something despite difficulty or delay.",
+      "example": "Learning a language takes curiosity and perseverance.",
+      "collocation": "show perseverance"
+    },
+    {
+      "id": "pack-20261029-c2-assiduous",
+      "level": "C2",
+      "word": "assiduous",
+      "translation": "усердный, прилежный",
+      "pos": "adjective",
+      "topic": "Учёба и привычки",
+      "definition": "Giving sustained care and effort to a task.",
+      "example": "Her assiduous preparation made the presentation feel effortless.",
+      "collocation": "assiduous preparation"
+    },
+    {
+      "id": "pack-20261029-a2-practise",
+      "level": "A2",
+      "word": "practise",
+      "translation": "практиковаться",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To do something often so that you become better at it.",
+      "example": "I practise English for ten minutes after breakfast.",
+      "collocation": "practise speaking"
+    },
+    {
+      "id": "pack-20261029-a2-check",
+      "level": "A2",
+      "word": "check",
+      "translation": "проверять",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To look at something to see whether it is correct.",
+      "example": "Please check your answer before you move on.",
+      "collocation": "check an answer"
+    },
+    {
+      "id": "pack-20261029-a2-mistake",
+      "level": "A2",
+      "word": "mistake",
+      "translation": "ошибка",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "Something you do or write that is not correct.",
+      "example": "One mistake does not mean you cannot learn this.",
+      "collocation": "make a mistake"
+    },
+    {
+      "id": "pack-20261029-a2-notebook",
+      "level": "A2",
+      "word": "notebook",
+      "translation": "тетрадь, блокнот",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "A small book with pages for writing notes.",
+      "example": "I keep new words in a notebook beside my bed.",
+      "collocation": "write in a notebook"
+    },
+    {
+      "id": "pack-20261029-a2-break",
+      "level": "A2",
+      "word": "break",
+      "translation": "перерыв",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "A short time when you stop working or studying.",
+      "example": "Let's take a short break after this exercise.",
+      "collocation": "take a break"
+    },
+    {
+      "id": "pack-20261029-b1-concentrate",
+      "level": "B1",
+      "word": "concentrate",
+      "translation": "сосредоточиваться",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To give most of your attention to one activity.",
+      "example": "I find it easier to concentrate in a quiet room.",
+      "collocation": "concentrate on a task"
+    },
+    {
+      "id": "pack-20261029-b1-revise",
+      "level": "B1",
+      "word": "revise",
+      "translation": "повторять изученное",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To study something again, especially before a test.",
+      "example": "We revise the most useful phrases every Friday.",
+      "collocation": "revise for an exam"
+    },
+    {
+      "id": "pack-20261029-b1-manage",
+      "level": "B1",
+      "word": "manage",
+      "translation": "справляться, суметь",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To succeed in doing something, even when it is difficult.",
+      "example": "Can you manage to read one page before lunch?",
+      "collocation": "manage to finish"
+    },
+    {
+      "id": "pack-20261029-b1-improvement",
+      "level": "B1",
+      "word": "improvement",
+      "translation": "улучшение",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "A change that makes something better.",
+      "example": "There is a clear improvement in the way you explain your ideas.",
+      "collocation": "a clear improvement"
+    },
+    {
+      "id": "pack-20261029-b1-effort",
+      "level": "B1",
+      "word": "effort",
+      "translation": "усилие",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "The energy and work you put into doing something.",
+      "example": "Learning these phrases is worth the effort.",
+      "collocation": "make an effort"
+    },
+    {
+      "id": "pack-20261029-b2-prioritise",
+      "level": "B2",
+      "word": "prioritise",
+      "translation": "расставлять приоритеты",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To decide which tasks deserve attention first.",
+      "example": "I prioritise useful phrases over words I rarely encounter.",
+      "collocation": "prioritise your tasks"
+    },
+    {
+      "id": "pack-20261029-b2-feedback",
+      "level": "B2",
+      "word": "feedback",
+      "translation": "обратная связь",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "Comments that help you understand how well something worked.",
+      "example": "Specific feedback helps me notice what to improve.",
+      "collocation": "constructive feedback"
+    },
+    {
+      "id": "pack-20261029-b2-distract",
+      "level": "B2",
+      "word": "distract",
+      "translation": "отвлекать",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To pull someone's attention away from what they are doing.",
+      "example": "Notifications can distract you from a difficult paragraph.",
+      "collocation": "distract someone from work"
+    },
+    {
+      "id": "pack-20261029-b2-persist",
+      "level": "B2",
+      "word": "persist",
+      "translation": "упорно продолжать",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To continue trying even when something is difficult.",
+      "example": "If you persist, the unfamiliar sounds will become easier.",
+      "collocation": "persist in trying"
+    },
+    {
+      "id": "pack-20261029-b2-adapt",
+      "level": "B2",
+      "word": "adapt",
+      "translation": "адаптировать, приспосабливаться",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To change something so that it suits a different situation.",
+      "example": "You can adapt your study plan to a busy week.",
+      "collocation": "adapt a plan"
+    },
+    {
+      "id": "pack-20261029-c1-consolidate",
+      "level": "C1",
+      "word": "consolidate",
+      "translation": "закреплять",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To make knowledge, progress, or a position more secure.",
+      "example": "Short reviews help consolidate what you learned yesterday.",
+      "collocation": "consolidate your knowledge"
+    },
+    {
+      "id": "pack-20261029-c1-retain",
+      "level": "C1",
+      "word": "retain",
+      "translation": "сохранять в памяти",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To keep information available in your memory.",
+      "example": "Meaningful examples make it easier to retain new vocabulary.",
+      "collocation": "retain information"
+    },
+    {
+      "id": "pack-20261029-c1-proficiency",
+      "level": "C1",
+      "word": "proficiency",
+      "translation": "уровень владения, умение",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "A developed ability to perform a skill well.",
+      "example": "Her proficiency in English grew through regular conversation.",
+      "collocation": "language proficiency"
+    },
+    {
+      "id": "pack-20261029-c1-incremental",
+      "level": "C1",
+      "word": "incremental",
+      "translation": "постепенный, пошаговый",
+      "pos": "adjective",
+      "topic": "Учёба и привычки",
+      "definition": "Happening through a series of small additions or changes.",
+      "example": "The course is built around incremental progress.",
+      "collocation": "incremental improvement"
+    },
+    {
+      "id": "pack-20261029-c1-refine",
+      "level": "C1",
+      "word": "refine",
+      "translation": "совершенствовать, уточнять",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To improve something by making small, careful changes.",
+      "example": "Reading your draft aloud can help refine its rhythm.",
+      "collocation": "refine your technique"
+    },
+    {
+      "id": "pack-20261029-c2-ingrained",
+      "level": "C2",
+      "word": "ingrained",
+      "translation": "глубоко укоренившийся",
+      "pos": "adjective",
+      "topic": "Учёба и привычки",
+      "definition": "So firmly established that it is difficult to change.",
+      "example": "An ingrained habit can take time and patience to replace.",
+      "collocation": "an ingrained habit"
+    },
+    {
+      "id": "pack-20261029-c2-diligence",
+      "level": "C2",
+      "word": "diligence",
+      "translation": "старательность, усердие",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "Steady, careful attention to completing work well.",
+      "example": "The project reflects the team's diligence and care.",
+      "collocation": "work with diligence"
+    },
+    {
+      "id": "pack-20261029-c2-internalise",
+      "level": "C2",
+      "word": "internalise",
+      "translation": "глубоко усваивать",
+      "pos": "verb",
+      "topic": "Учёба и привычки",
+      "definition": "To absorb an idea or pattern until it becomes part of how you think.",
+      "example": "Conversation helps you internalise patterns that once felt unfamiliar.",
+      "collocation": "internalise a pattern"
+    },
+    {
+      "id": "pack-20261029-c2-discernment",
+      "level": "C2",
+      "word": "discernment",
+      "translation": "проницательность, тонкое понимание",
+      "pos": "noun",
+      "topic": "Учёба и привычки",
+      "definition": "The ability to notice important differences and judge thoughtfully.",
+      "example": "Choosing the right tone requires sensitivity and discernment.",
+      "collocation": "show discernment"
+    },
+    {
+      "id": "pack-20261029-c2-erudite",
+      "level": "C2",
+      "word": "erudite",
+      "translation": "эрудированный",
+      "pos": "adjective",
+      "topic": "Учёба и привычки",
+      "definition": "Showing wide knowledge gained through study.",
+      "example": "Her erudite introduction connects the novel with several historical debates.",
+      "collocation": "an erudite discussion"
+    },
+    {
+      "id": "pack-20261029-a2-lend",
+      "level": "A2",
+      "word": "lend",
+      "translation": "давать взаймы",
+      "definition": "To let someone use something for a while and then get it back.",
+      "example": "Can you lend me your pen until lunch?",
+      "collocation": "lend someone a pen",
+      "topic": "Помощь и вещи",
+      "pos": "verb",
+      "levelReason": "Конкретное бытовое действие; простая просьба с can.",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/lend#English",
+        "checkedOn": "2026-10-29",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261029-b1-postpone",
+      "level": "B1",
+      "word": "postpone",
+      "translation": "откладывать, переносить",
+      "definition": "To move a planned activity to a later time.",
+      "example": "We need to postpone the meeting until Friday.",
+      "collocation": "postpone a meeting",
+      "topic": "Планы и время",
+      "pos": "verb",
+      "levelReason": "Полезный глагол для обсуждения изменения планов.",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/postpone#English",
+        "checkedOn": "2026-10-29",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261029-b2-drawback",
+      "level": "B2",
+      "word": "drawback",
+      "translation": "недостаток, отрицательная сторона",
+      "definition": "A feature that makes an option less useful or attractive.",
+      "example": "The main drawback of this flat is the noise from the road.",
+      "collocation": "a major drawback",
+      "topic": "Выбор и решения",
+      "pos": "noun",
+      "levelReason": "Оценка преимуществ и недостатков в развёрнутом объяснении.",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/drawback#English",
+        "checkedOn": "2026-10-29",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261029-c1-tentative",
+      "level": "C1",
+      "word": "tentative",
+      "translation": "предварительный, неокончательный",
+      "definition": "Not yet fixed or certain, and still open to change.",
+      "example": "We reached a tentative agreement, subject to approval by both teams.",
+      "collocation": "a tentative agreement",
+      "topic": "Обсуждение и договорённости",
+      "pos": "adjective",
+      "levelReason": "Точное выражение степени уверенности в формальном обсуждении.",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/tentative#English",
+        "checkedOn": "2026-10-29",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261029-c2-perspicacious",
+      "level": "C2",
+      "word": "perspicacious",
+      "translation": "проницательный",
+      "definition": "Quick to notice and understand details that other people miss.",
+      "example": "Her perspicacious questions exposed a flaw in the otherwise convincing proposal.",
+      "collocation": "a perspicacious observer",
+      "topic": "Мышление и анализ",
+      "pos": "adjective",
+      "levelReason": "Менее частотное формальное слово для тонкой оценки аналитических способностей.",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/perspicacious#English",
+        "checkedOn": "2026-10-29",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    }
+  ]
+}

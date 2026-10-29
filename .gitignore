@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.runtime/
+.cache/
+*.log
+*.tmp
+*.p12
+*.jks
+*password*
+.env
