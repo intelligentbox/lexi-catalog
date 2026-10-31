@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "revision": 3,
-  "publishedAt": "2026-10-29T21:24:55.989237Z",
+  "revision": 4,
+  "publishedAt": "2026-10-31T12:43:46.429512Z",
   "description": "Учебные карточки Lexi. Новые словарные карточки адаптированы по Wiktionary (CC BY-SA 4.0); уровни присвоены редакционно.",
   "cadence": {
     "daily": "5 новых слов: по одному на уровень",
@@ -78,6 +78,19 @@
         "pack-20261030-b2-negotiate",
         "pack-20261030-c1-inadvertent",
         "pack-20261030-c2-circumspect"
+      ]
+    },
+    {
+      "id": "daily-20261031",
+      "kind": "daily",
+      "title": "Слова на каждый день",
+      "publishedOn": "2026-10-31",
+      "wordIds": [
+        "pack-20261031-a2-vegetable",
+        "pack-20261031-b1-reasonable",
+        "pack-20261031-b2-constraint",
+        "pack-20261031-c1-ambivalent",
+        "pack-20261031-c2-vociferous"
       ]
     }
   ],
@@ -651,6 +664,146 @@
         "name": "Wiktionary",
         "url": "https://en.wiktionary.org/wiki/circumspect#English",
         "checkedOn": "2026-10-30",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261031-a2-vegetable",
+      "word": "vegetable",
+      "level": "A2",
+      "pos": "adjective",
+      "pronunciation": {
+        "uk": "/ˈvɛd͡ʒ.tə.bəl/",
+        "us": "/ˈvɛd͡ʒ.tə.bəl/"
+      },
+      "collocation": "vegetable dish",
+      "levelReason": "Estimated A2 for this sense; not an official CEFR classification.",
+      "definition": "Of or relating to plants.",
+      "definitionOrigin": "dictionary",
+      "example": "This substance is vegetable, not mineral.",
+      "exampleOrigin": "dictionary",
+      "translation": "овощной",
+      "translationGloss": "of or relating to vegetables",
+      "topic": "Культура",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/vegetable#English",
+        "checkedOn": "2026-10-31",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261031-b1-reasonable",
+      "word": "reasonable",
+      "level": "B1",
+      "pos": "adjective",
+      "pronunciation": {
+        "uk": "/ˈɹiː.zə.nə.bəl/",
+        "us": "/ˈɹi.zə.nə.bəl/"
+      },
+      "collocation": "reasonable price",
+      "levelReason": "Estimated B1 for this sense; not an official CEFR classification.",
+      "definition": "Satisfactory.",
+      "definitionOrigin": "dictionary",
+      "example": "The builders did a reasonable job, given the short notice.",
+      "exampleOrigin": "dictionary",
+      "translation": "удовлетворительный",
+      "translationGloss": "satisfactory",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/reasonable#English",
+        "checkedOn": "2026-10-31",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261031-b2-constraint",
+      "word": "constraint",
+      "level": "B2",
+      "pos": "noun",
+      "pronunciation": {
+        "uk": "/kənˈstɹeɪnt/",
+        "us": "/kənˈstɹeɪnt/"
+      },
+      "collocation": "constraint on budget",
+      "levelReason": "Estimated B2 for this sense; not an official CEFR classification.",
+      "definition": "Something that constrains; a restriction.",
+      "definitionOrigin": "dictionary",
+      "example": "An engineer must recognize the difference between a constraint (to work within) and a problem (to be eliminated via resolution).",
+      "exampleOrigin": "dictionary",
+      "translation": "ограничение",
+      "translationGloss": "something that constrains",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/constraint#English",
+        "checkedOn": "2026-10-31",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261031-c1-ambivalent",
+      "word": "ambivalent",
+      "level": "C1",
+      "pos": "adjective",
+      "pronunciation": {
+        "uk": "/æmˈbɪv.ə.lənt/",
+        "us": "/æmˈbɪv.ə.lənt/"
+      },
+      "collocation": "ambivalent feelings",
+      "levelReason": "Estimated C1 for this sense; not an official CEFR classification.",
+      "definition": "Alternately being or having one opinion or feeling, and then the opposite.",
+      "definitionOrigin": "dictionary",
+      "example": "His feelings toward his parents are ambivalent.",
+      "exampleOrigin": "dictionary",
+      "translation": "двойственный",
+      "translationGloss": "experiencing or expressing opposing feelings",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/ambivalent#English",
+        "checkedOn": "2026-10-31",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261031-c2-vociferous",
+      "word": "vociferous",
+      "level": "C2",
+      "pos": "adjective",
+      "pronunciation": {
+        "uk": "/vəʊˈsɪfəɹəs/",
+        "us": "/voʊˈsɪfəɹəs/"
+      },
+      "collocation": "vociferous debate",
+      "levelReason": "Estimated C2 for this sense; not an official CEFR classification.",
+      "definition": "Vocally and forcefully opinionated.",
+      "definitionOrigin": "dictionary",
+      "example": "Not even the most vociferous advocates of reform were willing to go to such lengths.",
+      "exampleOrigin": "dictionary",
+      "translation": "кричащий",
+      "translationGloss": "making a noisy outcry",
+      "topic": "Культура",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/vociferous#English",
+        "checkedOn": "2026-10-31",
         "attribution": "Wiktionary contributors",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
