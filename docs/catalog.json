@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "revision": 4,
-  "publishedAt": "2026-10-31T12:43:46.429512Z",
+  "revision": 5,
+  "publishedAt": "2026-11-01T13:34:44.056697Z",
   "description": "Учебные карточки Lexi. Новые словарные карточки адаптированы по Wiktionary (CC BY-SA 4.0); уровни присвоены редакционно.",
   "cadence": {
     "daily": "5 новых слов: по одному на уровень",
@@ -91,6 +91,19 @@
         "pack-20261031-b2-constraint",
         "pack-20261031-c1-ambivalent",
         "pack-20261031-c2-vociferous"
+      ]
+    },
+    {
+      "id": "daily-20261101",
+      "kind": "daily",
+      "title": "Слова на каждый день",
+      "publishedOn": "2026-11-01",
+      "wordIds": [
+        "pack-20261101-a2-bottle",
+        "pack-20261101-b1-mention",
+        "pack-20261101-b2-comprehensive",
+        "pack-20261101-c1-conducive",
+        "pack-20261101-c2-prevaricate"
       ]
     }
   ],
@@ -804,6 +817,146 @@
         "name": "Wiktionary",
         "url": "https://en.wiktionary.org/wiki/vociferous#English",
         "checkedOn": "2026-10-31",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261101-a2-bottle",
+      "word": "bottle",
+      "level": "A2",
+      "pos": "noun",
+      "pronunciation": {
+        "uk": "/ˈbɒtəl/",
+        "us": "/ˈbɑtəl/"
+      },
+      "collocation": "bottle of beer",
+      "levelReason": "A2: 'bottle' as a container refers to a basic object used to hold liquids, which is a simple concept suitable for A2 learners. The example 'I only drank a bottle of beer' is clear and relatable.",
+      "definition": "The contents of such a container.",
+      "definitionOrigin": "dictionary",
+      "example": "I only drank a bottle of beer.",
+      "exampleOrigin": "dictionary",
+      "translation": "бутылка",
+      "translationGloss": "container",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/bottle#English",
+        "checkedOn": "2026-11-01",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261101-b1-mention",
+      "word": "mention",
+      "level": "B1",
+      "pos": "verb",
+      "pronunciation": {
+        "us": "/ˈmɛnʃən/",
+        "uk": "/ˈmɛnʃn̩/"
+      },
+      "collocation": "mention the issue",
+      "levelReason": "Estimated B1 for this sense; not an official CEFR classification.",
+      "definition": "( transitive ) To make mention of; to speak of; to refer to; to name; to specify",
+      "definitionOrigin": "dictionary",
+      "example": "He happened to mention your name to me.",
+      "exampleOrigin": "dictionary",
+      "translation": "упоминать",
+      "translationGloss": "to make a short reference to something",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/mention#English",
+        "checkedOn": "2026-11-01",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261101-b2-comprehensive",
+      "word": "comprehensive",
+      "level": "B2",
+      "pos": "adjective",
+      "pronunciation": {
+        "uk": "/ˌkɒm.pɹɪˈhɛn.sɪv/",
+        "us": "/ˌkɑm.pɹəˈhɛn.sɪv/"
+      },
+      "collocation": "comprehensive understanding",
+      "levelReason": "Estimated B2 for this sense; not an official CEFR classification.",
+      "definition": "Broadly or completely covering; including a large proportion of something.",
+      "definitionOrigin": "dictionary",
+      "example": "When there are diametrically opposing views on a big issue that concerns millions of people, doing comprehensive research just makes sense.",
+      "exampleOrigin": "dictionary",
+      "translation": "всесторонний",
+      "translationGloss": "broadly or completely covering",
+      "topic": "Учёба",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/comprehensive#English",
+        "checkedOn": "2026-11-01",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261101-c1-conducive",
+      "word": "conducive",
+      "level": "C1",
+      "pos": "adjective",
+      "pronunciation": {
+        "uk": "/kənˈdjuːsɪv/",
+        "us": "/kənˈdusɪv/"
+      },
+      "collocation": "conducive to success",
+      "levelReason": "Estimated C1 for this sense; not an official CEFR classification.",
+      "definition": "Tending to contribute to, encourage, or bring about some result.",
+      "definitionOrigin": "dictionary",
+      "example": "A small, dark kitchen is not conducive to elaborate cooking.",
+      "exampleOrigin": "dictionary",
+      "translation": "способствующий",
+      "translationGloss": "tending to contribute to, encourage, or bring about some result",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/conducive#English",
+        "checkedOn": "2026-11-01",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261101-c2-prevaricate",
+      "word": "prevaricate",
+      "level": "C2",
+      "pos": "verb",
+      "pronunciation": {
+        "uk": "/pɹɪˈvaɹɪkeɪt/",
+        "us": "/pɹɪˈvæɹɪkeɪt/"
+      },
+      "collocation": "prevaricate with hesitation",
+      "levelReason": "The verb 'prevaricate' is used at C2 level to describe intentionally ambiguous or evasive behavior, which requires advanced understanding of nuanced language use and complex social interactions.",
+      "definition": "( intransitive ) To speak or act in a manner that is intentionally ambiguous or evasive; equivocate.",
+      "definitionOrigin": "dictionary",
+      "example": "The people saw the politician prevaricate every day.",
+      "exampleOrigin": "dictionary",
+      "translation": "увиливать",
+      "translationGloss": "shift or turn from direct speech or behaviour, to equivocate",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/prevaricate#English",
+        "checkedOn": "2026-11-01",
         "attribution": "Wiktionary contributors",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
