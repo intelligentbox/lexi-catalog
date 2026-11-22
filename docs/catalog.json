@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "revision": 5,
-  "publishedAt": "2026-11-01T13:34:44.056697Z",
+  "revision": 6,
+  "publishedAt": "2026-11-22T14:46:52.533819Z",
   "description": "Учебные карточки Lexi. Новые словарные карточки адаптированы по Wiktionary (CC BY-SA 4.0); уровни присвоены редакционно.",
   "cadence": {
     "daily": "5 новых слов: по одному на уровень",
@@ -104,6 +104,19 @@
         "pack-20261101-b2-comprehensive",
         "pack-20261101-c1-conducive",
         "pack-20261101-c2-prevaricate"
+      ]
+    },
+    {
+      "id": "daily-20261122",
+      "kind": "daily",
+      "title": "Слова на каждый день",
+      "publishedOn": "2026-11-22",
+      "wordIds": [
+        "pack-20261122-a2-wallet",
+        "pack-20261122-b1-advantage",
+        "pack-20261122-b2-clarify",
+        "pack-20261122-c1-exacerbate",
+        "pack-20261122-c2-abide"
       ]
     }
   ],
@@ -957,6 +970,146 @@
         "name": "Wiktionary",
         "url": "https://en.wiktionary.org/wiki/prevaricate#English",
         "checkedOn": "2026-11-01",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261122-a2-wallet",
+      "word": "wallet",
+      "level": "A2",
+      "pos": "noun",
+      "pronunciation": {
+        "uk": "/ˈwɒl.ɪt/",
+        "us": "/ˈwɑl.ət/"
+      },
+      "collocation": "put my wallet on the table",
+      "levelReason": "The definition and example are simple and clear, suitable for A2 learners. The collocation 'put my wallet on the table' demonstrates basic usage of the word in a common context.",
+      "definition": "A small case, often flat and often made of leather, for keeping money (especially paper money ), credit cards, etc.",
+      "definitionOrigin": "dictionary",
+      "example": "The thief stole all the money and credit cards out of the old man's wallet.",
+      "exampleOrigin": "dictionary",
+      "translation": "бумажник",
+      "translationGloss": "case for keeping money",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/wallet#English",
+        "checkedOn": "2026-11-22",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261122-b1-advantage",
+      "word": "advantage",
+      "level": "B1",
+      "pos": "noun",
+      "pronunciation": {
+        "uk": "/ədˈvɑːn.tɪd͡ʒ/",
+        "us": "/ədˈvæn.tɪd͡ʒ/"
+      },
+      "collocation": "the advantage of a good constitution",
+      "levelReason": "B1: 'Advantage' refers to a benefit or superiority, which is a common concept at this level. The example 'Having the faster car is of little advantage' is simple and clear.",
+      "definition": "( countable, uncountable ) Superiority of state, or that which gives it; benefit; gain; profit",
+      "definitionOrigin": "dictionary",
+      "example": "Having the faster car is of little advantage.",
+      "exampleOrigin": "dictionary",
+      "translation": "преимущество",
+      "translationGloss": "any condition, circumstance, opportunity, or means, particularly favorable to success",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/advantage#English",
+        "checkedOn": "2026-11-22",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261122-b2-clarify",
+      "word": "clarify",
+      "level": "B2",
+      "pos": "verb",
+      "pronunciation": {
+        "uk": "/ˈklæɹ.ɪ.faɪ/",
+        "us": "/ˈklæɹ.ɪ.faɪ/"
+      },
+      "collocation": "clarify the issue",
+      "levelReason": "Estimated B2 for this sense; not an official CEFR classification.",
+      "definition": "( figuratively, by extension, transitive, intransitive ) To make or become clear or easily understood; to explain or resolve in order to remove doubt or obscurity.",
+      "definitionOrigin": "dictionary",
+      "example": "Please clarify what you mean by this.",
+      "exampleOrigin": "dictionary",
+      "translation": "прояснять",
+      "translationGloss": "(''transitive'') to make clear or easily understood",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/clarify#English",
+        "checkedOn": "2026-11-22",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261122-c1-exacerbate",
+      "word": "exacerbate",
+      "level": "C1",
+      "pos": "verb",
+      "pronunciation": {
+        "us": "/ɪɡˈzæsɚˌbeɪt/",
+        "uk": "/ɪɡˈzæsəˌbeɪt/"
+      },
+      "collocation": "exacerbate tensions",
+      "levelReason": "C1 level is appropriate as 'exacerbate' is a complex verb that requires understanding of abstract concepts and nuanced usage, which aligns with the C1 proficiency level.",
+      "definition": "( transitive ) To make worse (a problem, bad situation, negative feeling, etc.).",
+      "definitionOrigin": "dictionary",
+      "example": "The proposed shutdown would exacerbate unemployment problems.",
+      "exampleOrigin": "dictionary",
+      "translation": "ухудшать",
+      "translationGloss": "make worse",
+      "topic": "Работа",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/exacerbate#English",
+        "checkedOn": "2026-11-22",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261122-c2-abide",
+      "word": "abide",
+      "level": "C2",
+      "pos": "verb",
+      "pronunciation": {
+        "uk": "/əˈbaɪd/",
+        "us": "/əˈbaɪd/"
+      },
+      "collocation": "abide by",
+      "levelReason": "The verb 'abide' at C2 level is used in the phrasal verb 'abide by', which means 'to accept and act in accordance with'. This is a common and understandable usage at the advanced level.",
+      "definition": "Used in a phrasal verb: abide by ( \" to accept and act in accordance with \" ).",
+      "definitionOrigin": "dictionary",
+      "example": "The new teacher was strict and the students did not want to abide by his rules.",
+      "exampleOrigin": "dictionary",
+      "translation": "терпеть",
+      "translationGloss": "endure without yielding",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/abide#English",
+        "checkedOn": "2026-11-22",
         "attribution": "Wiktionary contributors",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
