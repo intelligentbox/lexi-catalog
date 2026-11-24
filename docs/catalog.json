@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "revision": 6,
-  "publishedAt": "2026-11-22T14:46:52.533819Z",
+  "revision": 7,
+  "publishedAt": "2026-11-24T18:04:36.621941Z",
   "description": "Учебные карточки Lexi. Новые словарные карточки адаптированы по Wiktionary (CC BY-SA 4.0); уровни присвоены редакционно.",
   "cadence": {
     "daily": "5 новых слов: по одному на уровень",
@@ -117,6 +117,19 @@
         "pack-20261122-b2-clarify",
         "pack-20261122-c1-exacerbate",
         "pack-20261122-c2-abide"
+      ]
+    },
+    {
+      "id": "daily-20261124",
+      "kind": "daily",
+      "title": "Слова на каждый день",
+      "publishedOn": "2026-11-24",
+      "wordIds": [
+        "pack-20261124-a2-appointment",
+        "pack-20261124-b1-support",
+        "pack-20261124-b2-pursue",
+        "pack-20261124-c1-unanimous",
+        "pack-20261124-c2-appreciation"
       ]
     }
   ],
@@ -1110,6 +1123,146 @@
         "name": "Wiktionary",
         "url": "https://en.wiktionary.org/wiki/abide#English",
         "checkedOn": "2026-11-22",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261124-a2-appointment",
+      "word": "appointment",
+      "level": "A2",
+      "pos": "noun",
+      "pronunciation": {
+        "uk": "/əˈpɔɪnt.mɛnt/",
+        "us": "/əˈpɔɪnt.mɛnt/"
+      },
+      "collocation": "doctor’s appointment",
+      "levelReason": "Estimated A2 for this sense; not an official CEFR classification.",
+      "definition": "An arrangement between people to meet; an engagement.",
+      "definitionOrigin": "dictionary",
+      "example": "They made an appointment to meet at six.",
+      "exampleOrigin": "dictionary",
+      "translation": "встреча",
+      "translationGloss": "arrangement for a meeting; an engagement",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/appointment#English",
+        "checkedOn": "2026-11-24",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261124-b1-support",
+      "word": "support",
+      "level": "B1",
+      "pos": "verb",
+      "pronunciation": {
+        "uk": "/səˈpɔːt/",
+        "us": "/səˈpoɹt/"
+      },
+      "collocation": "support France in the World Cup",
+      "levelReason": "Estimated B1 for this sense; not an official CEFR classification.",
+      "definition": "( transitive ) To back or favor a cause, party, etc., mentally or with concrete aid:",
+      "definitionOrigin": "dictionary",
+      "example": "I support France in the World Cup.",
+      "exampleOrigin": "dictionary",
+      "translation": "поддерживать",
+      "translationGloss": "to back a cause, party, etc., mentally or with concrete aid",
+      "topic": "Повседневная жизнь",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/support#English",
+        "checkedOn": "2026-11-24",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261124-b2-pursue",
+      "word": "pursue",
+      "level": "B2",
+      "pos": "verb",
+      "pronunciation": {
+        "uk": "/pəˈsjuː/",
+        "us": "/pɚˈsu/"
+      },
+      "collocation": "pursue a career",
+      "levelReason": "Estimated B2 for this sense; not an official CEFR classification.",
+      "definition": "( transitive ) To urge (someone or something) to act in a particular way.",
+      "definitionOrigin": "dictionary",
+      "example": "The mayor promised to pursue the city to be an Olympic sports venue.",
+      "exampleOrigin": "dictionary",
+      "translation": "преследовать",
+      "translationGloss": "to follow urgently",
+      "topic": "Работа",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/pursue#English",
+        "checkedOn": "2026-11-24",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261124-c1-unanimous",
+      "word": "unanimous",
+      "level": "C1",
+      "pos": "adjective",
+      "pronunciation": {
+        "uk": "/juːˈnanɪməs/",
+        "us": "/juˈnænəməs/"
+      },
+      "collocation": "unanimous decision",
+      "levelReason": "C1: 'Unanimous' describes agreement among many people, which is complex and requires advanced vocabulary understanding. Example: 'The committee made a unanimous decision.'",
+      "definition": "Sharing the same views or opinions, and being in harmony or accord.",
+      "definitionOrigin": "dictionary",
+      "example": "We were unanimous: the President had to go.",
+      "exampleOrigin": "dictionary",
+      "translation": "единодушный",
+      "translationGloss": "sharing the same view",
+      "topic": "Культура",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/unanimous#English",
+        "checkedOn": "2026-11-24",
+        "attribution": "Wiktionary contributors",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "adapted": true
+      }
+    },
+    {
+      "id": "pack-20261124-c2-appreciation",
+      "word": "appreciation",
+      "level": "C2",
+      "pos": "noun",
+      "pronunciation": {
+        "uk": "/əˌpɹiː.ʃiˈeɪ.ʃən/",
+        "us": "/əˌpɹi.ʃiˈeɪ.ʃən/"
+      },
+      "collocation": "appreciation of talent",
+      "levelReason": "Estimated C2 for this sense; not an official CEFR classification.",
+      "definition": "A fair valuation or estimate of merit, worth, weight, etc.; recognition of excellence; gratitude and esteem.",
+      "definitionOrigin": "dictionary",
+      "example": "We give to you this trophy as a token of our appreciation of all your years of service.",
+      "exampleOrigin": "dictionary",
+      "translation": "благодарность",
+      "translationGloss": "a just valuation or estimate of merit, worth, weight, etc.; recognition of excellence",
+      "topic": "Культура",
+      "source": {
+        "name": "Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/appreciation#English",
+        "checkedOn": "2026-11-24",
         "attribution": "Wiktionary contributors",
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
